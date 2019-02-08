@@ -17,13 +17,13 @@
 #.libPaths("C:/Users/antutlan/Microsoft/DSSInsightsAA - PFH-DEV2/CPENew/CPENew/CPE-Shiny/ShinyGithub2/SimilarityText/packrat/lib/x86_64-w64-mingw32/3.4.0")
 
 
-library(shiny)
+
 library(reticulate)
 py_install(c('numpy','pandas','nltk','gensim'))
 nltkdown <- import('nltk')
 nltkdown$download('all')
 source_python('TextSimilarity-Production.py')
-
+library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {
